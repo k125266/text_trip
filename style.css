@@ -250,30 +250,90 @@ body {
         font-size: 0.95em;
     }
     
-    /* 活動改為單欄 */
-    .activities-compact {
-        grid-template-columns: 1fr;
-        gap: 12px;
+    /* 時間軸手機版優化 */
+    .day-details {
+        height: calc(100vh - 340px);
     }
     
-    .activity-compact {
-        min-height: 80px;
+    .day-header-section {
         padding: 15px;
-        font-size: 0.95em;
     }
     
-    .activity-compact.nba-activity {
-        grid-column: span 1;
-        min-height: 110px;
+    .day-header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .day-number {
+        font-size: 1.1em;
+        padding: 6px 15px;
+    }
+    
+    .day-date {
+        font-size: 1em;
+    }
+    
+    .day-location {
+        font-size: 1.2em;
+    }
+    
+    .timeline-container {
+        padding-left: 60px;
+    }
+    
+    .timeline-time {
+        left: -60px;
+        width: 50px;
+    }
+    
+    .time-circle {
+        width: 12px;
+        height: 12px;
+        border-width: 3px;
+    }
+    
+    .time-text {
+        font-size: 0.85em;
+    }
+    
+    .timeline-line {
+        left: -54px;
+        top: 12px;
+    }
+    
+    .timeline-content {
+        padding: 12px 15px;
+    }
+    
+    .timeline-title {
         font-size: 1.05em;
     }
     
-    .day-title {
-        font-size: 1.3em;
+    .timeline-desc {
+        font-size: 0.9em;
     }
     
-    .day-details {
-        height: calc(100vh - 340px);
+    .timeline-price {
+        font-size: 0.95em;
+    }
+    
+    .nba-timeline-item .timeline-title {
+        font-size: 1.2em;
+    }
+    
+    .day-budget-footer {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .day-budget-footer span:first-child {
+        font-size: 1.1em;
+    }
+    
+    .budget-amount-large {
+        font-size: 1.5em;
     }
     
     /* 預算列 */
@@ -340,12 +400,6 @@ body {
     
     .tip-card p {
         font-size: 0.95em;
-    }
-    
-    /* 預算標籤 */
-    .budget-tag {
-        font-size: 1.25em;
-        padding: 12px;
     }
     
     .budget-display h2 {
