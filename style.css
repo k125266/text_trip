@@ -1,11 +1,342 @@
-* {
+/* 響應式設計 */
+@media (max-width: 1200px) {
+    .compact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .activities-compact {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .activity-compact.nba-activity {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 1024px) {
+    .accommodation-compact,
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .days-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 強制手機版單欄 - 使用更高的斷點 */
+@media (max-width: 900px) {
+    .compact-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .accommodation-compact {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .compact-header {
+        padding: 20px 15px;
+    }
+    
+    .compact-header h1 {
+        font-size: 1.6em;
+    }
+    
+    .compact-header::before {
+        font-size: 80px;
+        right: -10px;
+        top: -20px;
+    }
+    
+    .subtitle {
+        font-size: 0.9em;
+    }
+    
+    .tab-btn {
+        font-size: 0.75em;
+        padding: 10px 3px;
+    }
+    
+    .tab-content {
+        padding: 12px;
+    }
+    
+    /* 再次確保單欄 */
+    .compact-grid,
+    .accommodation-compact,
+    .tips-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+    
+    /* 特別處理匯率卡片 - 不要拉太高 */
+    .info-card {
+        min-height: auto;
+    }
+    
+    .big-number {
+        font-size: 1.8em;
+        padding: 15px;
+    }
+    
+    .card-body {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+    
+    .card-header {
+        font-size: 1em;
+        padding: 10px;
+    }
+    
+    /* 住宿卡片優化 */
+    .acc-card {
+        padding: 15px;
+    }
+    
+    .acc-card::after {
+        font-size: 40px;
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .acc-header {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    
+    .acc-card p {
+        font-size: 0.9em;
+        margin: 4px 0;
+    }
+    
+    .price-tag {
+        font-size: 1em;
+        margin-top: 10px;
+    }
+    
+    .total-acc {
+        font-size: 1.3em;
+        padding: 15px;
+    }
+    
+    .tip-card {
+        padding: 20px;
+    }
+    
+    .tip-icon {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    
+    .tip-title {
+        font-size: 1.1em;
+        margin-bottom: 8px;
+    }
+    
+    .tip-card p {
+        font-size: 0.9em;
+    }
+    
+    /* Day 按鈕改為 2x4 */
+    .days-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .day-btn {
+        padding: 12px 8px;
+        font-size: 0.9em;
+    }
+    
+    /* 時間軸手機版優化 */
+    .day-details {
+        height: calc(100vh - 320px);
+        padding-right: 5px;
+    }
+    
+    .day-header-section {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .day-header-top {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+    
+    .day-number {
+        font-size: 1em;
+        padding: 5px 12px;
+    }
+    
+    .day-date {
+        font-size: 0.9em;
+    }
+    
+    .day-location {
+        font-size: 1.1em;
+    }
+    
+    .timeline-container {
+        padding-left: 55px;
+    }
+    
+    .timeline-item {
+        margin-bottom: 20px;
+    }
+    
+    .timeline-time {
+        left: -55px;
+        width: 45px;
+    }
+    
+    .time-circle {
+        width: 10px;
+        height: 10px;
+        border-width: 3px;
+    }
+    
+    .time-text {
+        font-size: 0.75em;
+        margin-top: 5px;
+    }
+    
+    .timeline-line {
+        left: -50px;
+        top: 10px;
+    }
+    
+    .timeline-content {
+        padding: 10px 12px;
+    }
+    
+    .timeline-title {
+        font-size: 1em;
+        margin-bottom: 6px;
+    }
+    
+    .timeline-desc {
+        font-size: 0.85em;
+        line-height: 1.5;
+        margin-bottom: 6px;
+    }
+    
+    .timeline-price {
+        font-size: 0.85em;
+        margin-top: 6px;
+        padding-top: 6px;
+    }
+    
+    .nba-timeline-item .timeline-content {
+        padding: 12px;
+    }
+    
+    .nba-timeline-item .timeline-title {
+        font-size: 1.1em;
+    }
+    
+    .nba-timeline-item .timeline-desc {
+        font-size: 0.9em;
+    }
+    
+    .day-budget-footer {
+        padding: 12px 15px;
+        margin-top: 20px;
+    }
+    
+    .day-budget-footer span:first-child {
+        font-size: 1em;
+    }
+    
+    .budget-amount-large {
+        font-size: 1.4em;
+    }
+    
+    /* 預算區塊 */
+    .budget-display {
+        padding: 20px 15px;
+    }
+    
+    .budget-display h2 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+    
+    .budget-row {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    
+    .budget-row.total {
+        font-size: 1.05em;
+        padding: 12px 15px;
+    }
+    
+    .amount {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .compact-header h1 {
+        font-size: 1.4em;
+    }
+    
+    .subtitle {
+        font-size: 0.8em;
+    }
+    
+    .tab-btn {
+        font-size: 0.7em;
+        padding: 8px 2px;
+    }
+    
+    /* 確保極小螢幕也是單欄 */
+    .compact-grid,
+    .accommodation-compact,
+    .tips-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+    
+    .day-btn {
+        padding: 10px 6px;
+        font-size: 0.85em;
+    }
+    
+    .timeline-container {
+        padding-left: 50px;
+    }
+    
+    .timeline-time {
+        left: -50px;
+        width: 40px;
+    }
+    
+    .time-text* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; /* Safari 觸控高亮 */
 }
 
-/* 動畫效果 */
+/* 動畫效果 - 加入 Safari 前綴 */
 @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@-webkit-keyframes gradient-shift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
@@ -16,12 +347,39 @@
     50% { box-shadow: 0 0 40px rgba(0,125,199,0.9); }
 }
 
+@-webkit-keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(0,125,199,0.6); }
+    50% { box-shadow: 0 0 40px rgba(0,125,199,0.9); }
+}
+
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
+    0%, 100% { 
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+    }
+    50% { 
+        transform: translateY(-8px);
+        -webkit-transform: translateY(-8px);
+    }
+}
+
+@-webkit-keyframes float {
+    0%, 100% { 
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% { 
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
 }
 
 @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+@-webkit-keyframes shimmer {
     0% { background-position: -200% center; }
     100% { background-position: 200% center; }
 }
@@ -32,9 +390,11 @@ body {
     background: linear-gradient(135deg, #000000 0%, #001f3f 50%, #003d7a 100%);
     background-size: 200% 200%;
     animation: gradient-shift 15s ease infinite;
+    -webkit-animation: gradient-shift 15s ease infinite;
     color: #fff;
     height: 100vh;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased; /* Safari 字體渲染優化 */
 }
 
 .app-container {
@@ -65,6 +425,7 @@ body {
     right: -20px;
     top: -30px;
     animation: float 3s ease-in-out infinite;
+    -webkit-animation: float 3s ease-in-out infinite;
 }
 
 .compact-header h1 {
@@ -98,10 +459,13 @@ body {
     color: #C6CFD5;
     font-size: 1.15em;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
     border-bottom: 4px solid transparent;
     position: relative;
     font-weight: 600;
+    -webkit-appearance: none; /* 移除 Safari 默認樣式 */
+    outline: none;
 }
 
 .tab-btn::before {
@@ -112,8 +476,10 @@ body {
     width: 0;
     height: 4px;
     background: #007DC7;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
     transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
 }
 
 .tab-btn:hover::before {
@@ -124,6 +490,7 @@ body {
     background: linear-gradient(180deg, rgba(0,125,199,0.3) 0%, rgba(0,125,199,0.1) 100%);
     color: #fff;
     transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
 }
 
 .tab-btn.active {
@@ -141,6 +508,7 @@ body {
     display: none;
     flex: 1;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Safari 平滑滾動 */
     padding: 25px;
     background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 50px);
 }
@@ -157,16 +525,30 @@ body {
     border-radius: 15px;
     border: 2px solid rgba(0,125,199,0.4);
     overflow: hidden;
-    transition: all 0.4s;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    -webkit-backface-visibility: hidden; /* Safari 性能優化 */
+    backface-visibility: hidden;
 }
 
 .info-card:hover,
 .acc-card:hover,
 .tip-card:hover {
     transform: translateY(-8px) scale(1.02);
+    -webkit-transform: translateY(-8px) scale(1.02);
     border-color: #007DC7;
     box-shadow: 0 15px 40px rgba(0,125,199,0.6);
+}
+
+/* Safari 觸控支援 */
+.info-card:active,
+.acc-card:active,
+.tip-card:active,
+.tab-btn:active,
+.day-btn:active {
+    transform: scale(0.98);
+    -webkit-transform: scale(0.98);
 }
 
 /* 響應式設計 */
