@@ -6,6 +6,21 @@
     margin-bottom: 25px;
 }
 
+/* 手機版：總覽卡片改為單欄 */
+@media (max-width: 768px) {
+    .compact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .compact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+}
+
 .info-card {
     position: relative;
     overflow: hidden;
