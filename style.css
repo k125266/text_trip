@@ -215,195 +215,283 @@ body {
     }
     
     .tab-btn {
-        font-size: 0.8em;
-        padding: 12px 5px;
+        font-size: 0.75em;
+        padding: 10px 3px;
     }
     
     .tab-content {
-        padding: 15px;
+        padding: 12px;
     }
     
     /* 所有卡片改為單欄 */
     .compact-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 12px;
+    }
+    
+    /* 特別處理匯率卡片 - 不要拉太高 */
+    .info-card {
+        min-height: auto;
+    }
+    
+    .big-number {
+        font-size: 1.8em;
+        padding: 15px;
+    }
+    
+    .card-body {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+    
+    .card-header {
+        font-size: 1em;
+        padding: 10px;
     }
     
     .accommodation-compact {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 12px;
+    }
+    
+    /* 住宿卡片優化 */
+    .acc-card {
+        padding: 15px;
+    }
+    
+    .acc-card::after {
+        font-size: 40px;
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .acc-header {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    
+    .acc-card p {
+        font-size: 0.9em;
+        margin: 4px 0;
+    }
+    
+    .price-tag {
+        font-size: 1em;
+        margin-top: 10px;
+    }
+    
+    .total-acc {
+        font-size: 1.3em;
+        padding: 15px;
     }
     
     .tips-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 12px;
+    }
+    
+    .tip-card {
+        padding: 20px;
+    }
+    
+    .tip-icon {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    
+    .tip-title {
+        font-size: 1.1em;
+        margin-bottom: 8px;
+    }
+    
+    .tip-card p {
+        font-size: 0.9em;
     }
     
     /* Day 按鈕改為 2x4 */
     .days-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 8px;
     }
     
     .day-btn {
-        padding: 15px 10px;
-        font-size: 0.95em;
+        padding: 12px 8px;
+        font-size: 0.9em;
     }
     
     /* 時間軸手機版優化 */
     .day-details {
-        height: calc(100vh - 340px);
+        height: calc(100vh - 320px);
+        padding-right: 5px;
     }
     
     .day-header-section {
-        padding: 15px;
+        padding: 12px;
+        margin-bottom: 15px;
     }
     
     .day-header-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
     }
     
     .day-number {
-        font-size: 1.1em;
-        padding: 6px 15px;
+        font-size: 1em;
+        padding: 5px 12px;
     }
     
     .day-date {
-        font-size: 1em;
+        font-size: 0.9em;
     }
     
     .day-location {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
     
     .timeline-container {
-        padding-left: 60px;
+        padding-left: 55px;
+    }
+    
+    .timeline-item {
+        margin-bottom: 20px;
     }
     
     .timeline-time {
-        left: -60px;
-        width: 50px;
+        left: -55px;
+        width: 45px;
     }
     
     .time-circle {
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
         border-width: 3px;
     }
     
     .time-text {
-        font-size: 0.85em;
+        font-size: 0.75em;
+        margin-top: 5px;
     }
     
     .timeline-line {
-        left: -54px;
-        top: 12px;
+        left: -50px;
+        top: 10px;
     }
     
     .timeline-content {
-        padding: 12px 15px;
+        padding: 10px 12px;
     }
     
     .timeline-title {
-        font-size: 1.05em;
+        font-size: 1em;
+        margin-bottom: 6px;
     }
     
     .timeline-desc {
-        font-size: 0.9em;
+        font-size: 0.85em;
+        line-height: 1.5;
+        margin-bottom: 6px;
     }
     
     .timeline-price {
-        font-size: 0.95em;
+        font-size: 0.85em;
+        margin-top: 6px;
+        padding-top: 6px;
     }
     
-    .nba-timeline-item .timeline-title {
-        font-size: 1.2em;
-    }
-    
-    .day-budget-footer {
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 8px;
-    }
-    
-    .day-budget-footer span:first-child {
-        font-size: 1.1em;
-    }
-    
-    .budget-amount-large {
-        font-size: 1.5em;
-    }
-    
-    /* 預算列 */
-    .budget-row {
-        padding: 12px 15px;
-        font-size: 0.95em;
-    }
-    
-    .budget-row.total {
-        font-size: 1.15em;
-        padding: 15px;
-    }
-    
-    .amount {
-        font-size: 1em;
-    }
-    
-    /* 卡片內容 */
-    .card-header {
-        font-size: 1.15em;
+    .nba-timeline-item .timeline-content {
         padding: 12px;
     }
     
-    .card-body {
-        padding: 15px;
-        font-size: 0.95em;
+    .nba-timeline-item .timeline-title {
+        font-size: 1.1em;
     }
     
-    .big-number {
-        font-size: 2em;
-        padding: 20px;
+    .nba-timeline-item .timeline-desc {
+        font-size: 0.9em;
     }
     
-    /* 住宿卡片 */
-    .acc-header {
+    .day-budget-footer {
+        padding: 12px 15px;
+        margin-top: 20px;
+    }
+    
+    .day-budget-footer span:first-child {
+        font-size: 1em;
+    }
+    
+    .budget-amount-large {
         font-size: 1.4em;
     }
     
-    .acc-card::after {
-        font-size: 50px;
-    }
-    
-    .price-tag {
-        font-size: 1.15em;
-    }
-    
-    .total-acc {
-        font-size: 1.5em;
-        padding: 20px;
-    }
-    
-    /* 提醒卡片 */
-    .tip-icon {
-        font-size: 2.8em;
-    }
-    
-    .tip-title {
-        font-size: 1.25em;
-    }
-    
-    .tip-card {
-        padding: 25px;
-    }
-    
-    .tip-card p {
-        font-size: 0.95em;
+    /* 預算區塊 */
+    .budget-display {
+        padding: 20px 15px;
     }
     
     .budget-display h2 {
-        font-size: 1.5em;
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+    
+    .budget-row {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    
+    .budget-row.total {
+        font-size: 1.05em;
+        padding: 12px 15px;
+    }
+    
+    .amount {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .compact-header h1 {
+        font-size: 1.4em;
+    }
+    
+    .subtitle {
+        font-size: 0.8em;
+    }
+    
+    .tab-btn {
+        font-size: 0.7em;
+        padding: 8px 2px;
+    }
+    
+    .day-btn {
+        padding: 10px 6px;
+        font-size: 0.85em;
+    }
+    
+    .timeline-container {
+        padding-left: 50px;
+    }
+    
+    .timeline-time {
+        left: -50px;
+        width: 40px;
+    }
+    
+    .time-text {
+        font-size: 0.7em;
+    }
+    
+    .timeline-line {
+        left: -45px;
+    }
+    
+    .timeline-title {
+        font-size: 0.95em;
+    }
+    
+    .timeline-desc {
+        font-size: 0.8em;
     }
 }
 
