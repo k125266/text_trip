@@ -6,6 +6,33 @@
     margin-bottom: 25px;
 }
 
+.info-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255,255,255,0.1) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    animation: card-shine 3s ease-in-out infinite;
+}
+
+@keyframes card-shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
 .card-header {
     background: linear-gradient(135deg, rgba(0,125,199,0.5) 0%, rgba(0,125,199,0.3) 100%);
     padding: 15px;
@@ -14,6 +41,23 @@
     color: #fff;
     text-align: center;
     border-bottom: 2px solid #007DC7;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.info-card:hover .card-header::before {
+    left: 100%;
 }
 
 .card-body {
@@ -23,12 +67,24 @@
 
 .card-body p {
     margin: 8px 0;
+    transition: all 0.3s;
+}
+
+.info-card:hover .card-body p {
+    transform: translateX(5px);
 }
 
 .highlight {
     color: #C6CFD5;
     font-weight: bold;
     font-size: 1.1em;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.info-card:hover .highlight {
+    transform: scale(1.1);
+    color: #fff;
 }
 
 .big-number {
@@ -38,6 +94,12 @@
     font-weight: bold;
     padding: 25px;
     text-shadow: 0 0 20px rgba(0,125,199,0.8);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { transform: scale(1); text-shadow: 0 0 20px rgba(0,125,199,0.8); }
+    50% { transform: scale(1.05); text-shadow: 0 0 30px rgba(0,125,199,1); }
 }
 
 /* 預算顯示 */
@@ -115,12 +177,30 @@
     cursor: pointer;
     transition: all 0.3s;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.day-btn::before {
+    content: '🏀';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 2em;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.day-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1) rotate(360deg);
+    opacity: 0.3;
 }
 
 .day-btn:hover {
     background: linear-gradient(135deg, rgba(0,125,199,0.4) 0%, rgba(0,125,199,0.2) 100%);
     color: #fff;
-    transform: translateY(-5px);
+    transform: translateY(-5px) rotate(-2deg);
     box-shadow: 0 8px 20px rgba(0,125,199,0.5);
 }
 
@@ -130,12 +210,34 @@
     color: #fff;
     transform: scale(1.08);
     box-shadow: 0 8px 25px rgba(0,125,199,0.7);
+    animation: bounce-in 0.5s ease;
+}
+
+@keyframes bounce-in {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1.08); }
 }
 
 .day-btn.nba-day {
     background: linear-gradient(135deg, rgba(0,125,199,0.5) 0%, rgba(0,125,199,0.3) 100%);
     border-color: #007DC7;
     animation: glow 2s ease-in-out infinite;
+}
+
+.day-btn.nba-day::after {
+    content: '⭐';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 1.2em;
+    animation: star-spin 2s linear infinite;
+}
+
+@keyframes star-spin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
 }
 
 .day-details {
@@ -189,11 +291,29 @@
     align-items: center;
     min-height: 100px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.activity-compact::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,125,199,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.activity-compact:hover::before {
+    left: 100%;
 }
 
 .activity-compact:hover {
     background: linear-gradient(135deg, rgba(0,125,199,0.4) 0%, rgba(0,125,199,0.25) 100%);
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(-1deg);
     border-left-width: 6px;
     box-shadow: 0 8px 20px rgba(0,125,199,0.5);
 }
@@ -208,6 +328,27 @@
     font-size: 1.1em;
     min-height: 120px;
     box-shadow: 0 8px 25px rgba(0,125,199,0.6);
+    animation: nba-pulse 2s ease-in-out infinite;
+}
+
+@keyframes nba-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 8px 25px rgba(0,125,199,0.6); }
+    50% { transform: scale(1.02); box-shadow: 0 12px 35px rgba(0,125,199,0.8); }
+}
+
+.activity-compact.nba-activity::after {
+    content: '🏆';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    opacity: 0.2;
+    animation: trophy-bounce 1s ease-in-out infinite;
+}
+
+@keyframes trophy-bounce {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
 }
 
 .budget-tag {
@@ -238,6 +379,7 @@
     border: 3px solid rgba(0,125,199,0.4);
     transition: all 0.3s;
     position: relative;
+    cursor: pointer;
 }
 
 .acc-card::after {
@@ -250,6 +392,16 @@
     transition: all 0.4s;
 }
 
+.acc-card::before {
+    content: '✨';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
 .acc-card:hover {
     transform: translateY(-10px) rotate(-1deg);
 }
@@ -259,12 +411,28 @@
     opacity: 0.25;
 }
 
+.acc-card:hover::before {
+    opacity: 1;
+    animation: sparkle 1s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.2) rotate(180deg); opacity: 0.5; }
+}
+
 .acc-header {
     font-size: 1.6em;
     color: #C6CFD5;
     margin-bottom: 15px;
     font-weight: bold;
     text-shadow: 0 2px 8px rgba(0,125,199,0.6);
+    transition: all 0.3s;
+}
+
+.acc-card:hover .acc-header {
+    transform: translateX(10px);
+    color: #fff;
 }
 
 .price-tag {
@@ -273,6 +441,13 @@
     font-size: 1.3em;
     margin-top: 15px;
     text-shadow: 0 0 10px rgba(0,125,199,0.8);
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.acc-card:hover .price-tag {
+    transform: scale(1.1);
+    color: #C6CFD5;
 }
 
 .total-acc {
@@ -286,6 +461,12 @@
     border: 3px solid #007DC7;
     box-shadow: 0 10px 30px rgba(0,125,199,0.6);
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    animation: total-pulse 3s ease-in-out infinite;
+}
+
+@keyframes total-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
 }
 
 /* 提醒頁面 */
@@ -300,16 +481,41 @@
     border: 3px solid rgba(0,125,199,0.4);
     text-align: center;
     transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.tip-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,125,199,0.3), transparent);
+    transition: left 0.6s;
+}
+
+.tip-card:hover::before {
+    left: 100%;
 }
 
 .tip-card:hover {
-    transform: translateY(-10px) scale(1.03);
+    transform: translateY(-10px) scale(1.03) rotate(2deg);
 }
 
 .tip-icon {
     font-size: 3.5em;
     margin-bottom: 15px;
     animation: float 3s ease-in-out infinite;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.tip-card:hover .tip-icon {
+    transform: scale(1.2) rotate(360deg);
+    animation: none;
 }
 
 .tip-title {
@@ -318,9 +524,20 @@
     font-weight: bold;
     margin-bottom: 12px;
     text-shadow: 0 2px 8px rgba(0,125,199,0.6);
+    transition: all 0.3s;
+}
+
+.tip-card:hover .tip-title {
+    color: #fff;
+    transform: scale(1.05);
 }
 
 .tip-card p {
     font-size: 1em;
     line-height: 1.6;
+    transition: all 0.3s;
+}
+
+.tip-card:hover p {
+    transform: scale(1.02);
 }
