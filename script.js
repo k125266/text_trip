@@ -112,62 +112,66 @@ const dayData = {
     }
 };
 
-// 顯示特定天的詳細行程
-function showDay(day) {
+// 顯示特定天的詳細行程（新版：用於折疊卡片）
+function toggleDay(day) {
     const data = dayData[day];
-    const container = document.getElementById('day-details');
+    const card = event.currentTarget;
+    const content = document.getElementById(`day-content-${day}`);
+    const isExpanded = card.classList.contains('expanded');
     
-    // 更新所有 day 按鈕狀態
-    document.querySelectorAll('.day-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    // 關閉所有其他卡片
+    document.querySelectorAll('.day-card').forEach(c => {
+        if (c !== card) {
+            c.classList.remove('expanded');
+        }
+    });
     
-    let html = `
-        <div class="day-header-section ${data.isNBA ? 'nba-header' : ''}">
-            <div class="day-header-top">
-                <div class="day-number">${data.title}</div>
-                <div class="day-date">${data.subtitle}</div>
-            </div>
-            <div class="day-location">${data.location}</div>
-        </div>
-        <div class="timeline-container">
-    `;
-    
-    data.activities.forEach((activity, index) => {
-        const isLast = index === data.activities.length - 1;
-        const specialClass = activity.isNBA ? 'nba-timeline-item' : (activity.isReturn ? 'return-timeline-item' : '');
+    // 切換當前卡片
+    if (isExpanded) {
+        card.classList.remove('expanded');
+        content.innerHTML = '';
+    } else {
+        card.classList.add('expanded');
+        
+        let html = `
+            <div class="day-card-inner">
+                <div class="timeline-container">
+        `;
+        
+        data.activities.forEach((activity, index) => {
+            const isLast = index === data.activities.length - 1;
+            const specialClass = activity.isNBA ? 'nba-timeline-item' : (activity.isReturn ? 'return-timeline-item' : '');
+            
+            html += `
+                <div class="timeline-item ${specialClass}">
+                    <div class="timeline-time">
+                        <div class="time-circle"></div>
+                        <div class="time-text">${activity.time}</div>
+                    </div>
+                    <div class="timeline-line ${isLast ? 'timeline-line-last' : ''}"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">${activity.title}</div>
+                        ${activity.desc ? `<div class="timeline-desc">${activity.desc}</div>` : ''}
+                        ${activity.price ? `<div class="timeline-price">${activity.price}</div>` : ''}
+                    </div>
+                </div>
+            `;
+        });
         
         html += `
-            <div class="timeline-item ${specialClass}">
-                <div class="timeline-time">
-                    <div class="time-circle"></div>
-                    <div class="time-text">${activity.time}</div>
                 </div>
-                <div class="timeline-line ${isLast ? 'timeline-line-last' : ''}"></div>
-                <div class="timeline-content">
-                    <div class="timeline-title">${activity.title}</div>
-                    ${activity.desc ? `<div class="timeline-desc">${activity.desc}</div>` : ''}
-                    ${activity.price ? `<div class="timeline-price">${activity.price}</div>` : ''}
+                <div class="day-budget-footer">
+                    <span>當日花費</span>
+                    <span class="budget-amount-large">${data.budget}</span>
                 </div>
             </div>
         `;
-    });
-    
-    html += `
-        </div>
-        <div class="day-budget-footer">
-            <span>當日花費</span>
-            <span class="budget-amount-large">${data.budget}</span>
-        </div>
-    `;
-    
-    container.innerHTML = html;
+        
+        content.innerHTML = html;
+    }
 }
 
-// 頁面載入時顯示 Day 1
+// 頁面載入時不自動展開任何一天
 document.addEventListener('DOMContentLoaded', function() {
-    const firstDayBtn = document.querySelector('.day-btn');
-    if (firstDayBtn) {
-        firstDayBtn.classList.add('active');
-        showDay(1);
-    }
+    // 不需要自動展開
 });
