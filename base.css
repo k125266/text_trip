@@ -1,0 +1,125 @@
+/* Dallas Mavericks 官方色號 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap');
+
+:root {
+    --mavs-royal-blue: #0053BC;
+    --mavs-navy-blue: #002B5C;
+    --mavs-silver: #BBC4CA;
+    --mavs-black: #061922;
+}
+
+/* 基礎重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+}
+
+/* 自定義滾動條 */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 43, 92, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #0053BC 0%, rgba(0, 83, 188, 0.7) 100%);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 43, 92, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #0066CC 0%, #0053BC 100%);
+}
+
+/* Firefox 滾動條 */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #0053BC rgba(0, 43, 92, 0.3);
+}
+
+/* Body 樣式 */
+body {
+    font-family: Verdana, 'Noto Serif TC', serif;
+    background: linear-gradient(135deg, var(--mavs-black) 0%, var(--mavs-navy-blue) 100%);
+    background-attachment: fixed;
+    color: #fff;
+    min-height: 100vh;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+/* 通用動畫 */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { 
+        box-shadow: 0 0 20px rgba(255, 165, 0, 0.5); 
+    }
+    50% { 
+        box-shadow: 0 0 40px rgba(255, 165, 0, 0.8); 
+    }
+}
+
+@keyframes pulse-circle {
+    0%, 100% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(1.2); 
+    }
+}
+
+@keyframes basketball-bounce {
+    0%, 100% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(-5px); 
+    }
+}
+
+@keyframes basketball-spin {
+    from { 
+        transform: rotate(0deg); 
+    }
+    to { 
+        transform: rotate(360deg); 
+    }
+}
+
+/* 手機版基礎響應式 */
+@media (max-width: 768px) {
+    .app-container { 
+        padding: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .app-container { 
+        padding: 15px; 
+    }
+}
