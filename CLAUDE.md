@@ -12,9 +12,9 @@ This is a single-page application for an 8-day, 7-night Texas basketball-themed 
 
 ## 🎨 Design System & Color Scheme
 
-### Japanese Fresh Style with Basketball Blue Accents
+### Japanese Traditional Colors with Basketball Blue Accents
 
-The design uses a **Japanese fresh aesthetic** with clean whites and soft grays, while preserving **Dallas Mavericks blue** as basketball-themed accents:
+The design uses **Japanese traditional colors (日系傳統色)** for warmth and layered visual depth, while preserving **Dallas Mavericks blue** as basketball-themed accents:
 
 ```css
 :root {
@@ -23,43 +23,64 @@ The design uses a **Japanese fresh aesthetic** with clean whites and soft grays,
     --mavs-navy-blue: #002B5C;    /* Deep blue for special elements */
     --mavs-light-blue: #6BA3D8;   /* Soft blue for gradients */
 
-    /* Japanese Fresh Main Colors */
-    --bg-light: #F8F9FA;          /* Light gray background */
-    --bg-white: #FFFFFF;          /* Pure white cards */
-    --bg-cream: #FEFDFB;          /* Cream white for body */
-    --text-dark: #2C3E50;         /* Primary dark text */
-    --text-gray: #5A6C7D;         /* Secondary gray text */
-    --text-light: #8B9DAF;        /* Light gray text */
+    /* === Japanese Traditional Color System === */
 
-    /* Fresh Accent Colors */
-    --accent-pink: #FFB6C1;       /* Soft pink */
-    --accent-mint: #B4E7CE;       /* Mint green for hover */
-    --accent-lavender: #D4C5F9;   /* Lavender purple */
-    --accent-peach: #FFDAB9;      /* Peach tone */
+    /* Base Colors (Background & Base) */
+    --ecru: #F4F4F0;              /* 生成色 - Natural cotton/linen, main background */
+    --glossy-silk: #EBE6D8;       /* 練色 - Aged paper color, secondary background */
+    --bg-white: #FFFFFF;          /* Pure white - for cards */
 
-    /* Neutral Tones */
-    --border-light: #E8ECEF;      /* Soft gray borders */
-    --shadow-soft: rgba(44, 62, 80, 0.08);  /* Subtle shadows */
+    /* Nature Series (Nature & Freshness) */
+    --young-grass: #B5CAA0;       /* 若草色 - Spring young grass green */
+    --pale-blue-green: #AABCBF;   /* 水淺蔥 - Morning lake water color */
+    --grayish-cherry: #D7C4BB;    /* 灰櫻 - Mature elegant pink */
+    --wisteria-gray: #95A3C8;     /* 藤鼠 - Mysterious wisteria purple */
+
+    /* Earth & Accent Colors */
+    --mustard: #D8CA86;           /* 辛子色 - Mustard yellow, accent highlight */
+    --walnut: #917B6D;            /* 胡桃色 - Warm walnut brown */
+    --neutral-gray: #727171;      /* 素鼠 - Soft neutral gray */
+    --iron-blue: #2F3A4C;         /* 鐵御納戶 - Intellectual iron blue */
+
+    /* Semantic Aliases (for convenience) */
+    --bg-main: var(--ecru);
+    --bg-card: var(--bg-white);
+    --bg-secondary: var(--glossy-silk);
+    --text-primary: var(--iron-blue);
+    --text-secondary: var(--neutral-gray);
+    --text-tertiary: var(--walnut);
+    --accent-primary: var(--mustard);
+    --accent-nature: var(--young-grass);
+    --border-color: rgba(145, 123, 109, 0.2);
+    --shadow-color: rgba(47, 58, 76, 0.08);
 }
 ```
 
 ### Visual Style Characteristics
 
-1. **Background**: Light gradient (`--bg-cream` to `--bg-light`) - clean and airy
-2. **Cards**: Pure white (`--bg-white`) with soft gray borders and subtle shadows
-3. **Text**: Dark gray (`--text-dark`) for readability on white backgrounds
-4. **Basketball Elements**: Blue gradients reserved for:
-   - Header section
+1. **Background**: Warm gradient (生成色 `--ecru` to 練色 `--glossy-silk`) - natural cotton/paper warmth
+2. **Cards**: Pure white (`--bg-white`) with walnut-tinted borders and soft neutral shadows
+3. **Text Colors**:
+   - Primary headings: Iron blue (`--iron-blue`) - intellectual depth
+   - Secondary text: Neutral gray (`--neutral-gray`) - soft readability
+   - Tertiary elements: Walnut (`--walnut`) - warm accents
+4. **Natural Color Accents**:
+   - Hover states: Grayish cherry (`--grayish-cherry`), pale blue-green (`--pale-blue-green`)
+   - Day badges: Young grass (`--young-grass`) gradient - spring freshness
+   - Timeline elements: Young grass to pale blue-green gradient
+   - Price tags: Mustard yellow (`--mustard`) - eye-catching highlights
+5. **Basketball Elements** (Blue gradients reserved for):
+   - Header section (Mavericks light blue to royal blue)
    - Active tab buttons
-   - NBA Day 4 card
-   - Day badges
-   - Budget totals
-5. **Hover Effects**:
+   - NBA Day 4 card and badge
+6. **Budget Totals**: Wisteria gray to iron blue gradient - elegant and sophisticated
+7. **Hover Effects**:
    - `translateY(-8px)` lift
-   - Soft blue-tinted shadows
-   - Border color changes to light blue
-6. **Border Radius**: 15-25px for modern, friendly appearance
-7. **Shadows**: Neutral soft shadows instead of blue-tinted ones
+   - Natural color-tinted shadows (cherry, grass, blue-green)
+   - Border color changes to thematic natural colors
+   - Subtle gradient backgrounds on hover
+8. **Border Radius**: 15-25px for modern, friendly appearance
+9. **Layered Backgrounds**: Multiple background tones (ecru, glossy-silk, white) create visual depth
 
 ### Typography
 
@@ -300,11 +321,16 @@ function toggleDay(day) {
 
 ### When Modifying Styles
 
-1. **Always use the Mavericks color variables** - Never introduce arbitrary colors
+1. **Always use Japanese traditional color variables** - Never introduce arbitrary colors
+   - Use semantic aliases: `--bg-main`, `--bg-card`, `--text-primary`, etc.
+   - Reference traditional colors by their names: `--ecru`, `--young-grass`, `--mustard`, etc.
+   - Reserve Mavericks blue (`--mavs-royal-blue`, etc.) ONLY for basketball-themed elements
 2. **Maintain gradient direction**: Use `135deg` for consistency
 3. **Preserve animation timing**: Existing animations are carefully balanced
-4. **Keep border-radius values**: 12-25px range for cards
-5. **Use orange (#FFA500) for emphasis**: Prices, highlights, special events
+4. **Keep border-radius values**: 15-25px range for cards
+5. **Use mustard yellow (`--mustard` / #D8CA86) for emphasis**: Prices, highlights, call-to-actions
+6. **Layer backgrounds for depth**: Combine `--ecru`, `--glossy-silk`, and `--bg-white` for visual hierarchy
+7. **Natural color hover states**: Use `--grayish-cherry`, `--pale-blue-green`, or `--young-grass` for different card types
 
 ### When Adding Content
 
@@ -421,37 +447,72 @@ function toggleDay(day) {
 ## 🎨 Quick Color Reference
 
 ```css
-/* Backgrounds */
-body background: linear-gradient(135deg, #FEFDFB 0%, #F8F9FA 100%)
+/* === Japanese Traditional Color Palette === */
+
+/* Backgrounds (Base Layers) */
+body background: linear-gradient(135deg, #F4F4F0 0%, #EBE6D8 50%, #F4F4F0 100%)
+  /* 生成色 (ecru) → 練色 (glossy-silk) warm gradient */
 card background: #FFFFFF (pure white)
-header background: linear-gradient(135deg, #6BA3D8 0%, #0053BC 100%) /* Basketball blue */
+secondary background: #EBE6D8 (--glossy-silk, 練色)
+day card inner: #F4F4F0 (--ecru, 生成色)
 
 /* Borders */
-normal border: 2px solid #E8ECEF (--border-light)
-hover border: 2px solid #6BA3D8 (--mavs-light-blue)
-NBA/special border: 3px solid #0053BC (--mavs-royal-blue)
+normal border: 2px solid rgba(145,123,109,0.2) (--border-color, walnut-tinted)
+hover border - cherry: 2px solid #D7C4BB (--grayish-cherry, 灰櫻)
+hover border - grass: 2px solid #B5CAA0 (--young-grass, 若草色)
+hover border - water: 2px solid #AABCBF (--pale-blue-green, 水淺蔥)
+special border: 3px solid #EBE6D8 (--glossy-silk, 練色)
+NBA border: 3px solid #0053BC (--mavs-royal-blue, basketball accent)
 
 /* Text Colors */
-primary text: #2C3E50 (--text-dark)
-secondary text: #5A6C7D (--text-gray)
-light text: #8B9DAF (--text-light)
-emphasis/price: #0053BC (blue instead of orange)
+primary text: #2F3A4C (--iron-blue, 鐵御納戶)
+secondary text: #727171 (--neutral-gray, 素鼠)
+tertiary text: #917B6D (--walnut, 胡桃色)
+
+/* Accent Colors */
+price/emphasis: #D8CA86 (--mustard, 辛子色 - mustard yellow)
+price background: rgba(216,202,134,0.2) with border rgba(216,202,134,0.3)
 
 /* Shadows */
-normal shadow: 0 4px 12px rgba(44,62,80,0.08) /* Soft neutral */
-hover shadow: 0 12px 28px rgba(107,163,216,0.25) /* Light blue tint */
+normal shadow: 0 4px 12px rgba(47,58,76,0.08) (--shadow-color)
+hover shadow - cherry: 0 12px 28px rgba(215,196,187,0.35) /* 灰櫻 tint */
+hover shadow - grass: 0 12px 28px rgba(181,202,160,0.3) /* 若草色 tint */
+hover shadow - water: 0 12px 28px rgba(170,188,191,0.3) /* 水淺蔥 tint */
+hover shadow - wisteria: 0 12px 28px rgba(149,163,200,0.4) /* 藤鼠 tint */
 NBA shadow: 0 8px 24px rgba(0,83,188,0.3) /* Basketball blue */
 
-/* Basketball Elements (Blue Accents) */
+/* Gradients - Nature Series */
+day badge (normal): linear-gradient(135deg, #B5CAA0 0%, #AABCBF 100%)
+  /* 若草色 → 水淺蔥 */
+timeline elements: linear-gradient(to bottom, #AABCBF, rgba(215,196,187,0.4))
+  /* 水淺蔥 → 灰櫻 fade */
+budget total: linear-gradient(135deg, #95A3C8, #2F3A4C)
+  /* 藤鼠 → 鐵御納戶 */
+
+/* Gradients - Basketball Elements (Blue Accents) */
+header background: linear-gradient(135deg, #6BA3D8 0%, #0053BC 100%)
 active tab: linear-gradient(135deg, #6BA3D8 0%, #0053BC 100%)
-day badge: linear-gradient(135deg, #6BA3D8 0%, #0053BC 100%)
-budget total: linear-gradient(135deg, #6BA3D8 0%, #0053BC 100%)
+NBA badge: linear-gradient(135deg, #0053BC 0%, #002B5C 100%)
 NBA card background: linear-gradient(135deg, rgba(107,163,216,0.15), rgba(0,83,188,0.1))
 
-/* Fresh Accent Colors (Hover States) */
-mint green hover: #B4E7CE (--accent-mint)
-soft pink: #FFB6C1 (--accent-pink)
-lavender: #D4C5F9 (--accent-lavender)
+/* Hover State Backgrounds */
+tab button hover: #D7C4BB (--grayish-cherry, 灰櫻)
+budget row hover: #AABCBF (--pale-blue-green, 水淺蔥)
+weather item hover: #AABCBF (--pale-blue-green, 水淺蔥)
+info card hover: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(181,202,160,0.1) 100%)
+  /* white → 若草色 subtle tint */
+
+/* Journey Cards (City Themes) */
+journey days label: #D8CA86 (--mustard, 辛子色)
+journey highlights badge: rgba(181,202,160,0.9) with #2F3A4C text
+  /* 若草色 background, 鐵御納戶 text */
+journey highlights badge hover: #B5CAA0 (--young-grass, 若草色)
+
+/* Scrollbar */
+scrollbar track: #F4F4F0 (--ecru, 生成色)
+scrollbar thumb: linear-gradient(180deg, #917B6D 0%, #727171 100%)
+  /* 胡桃色 → 素鼠 */
+scrollbar thumb hover: #2F3A4C (--iron-blue, 鐵御納戶)
 ```
 
 ---
@@ -488,10 +549,32 @@ lavender: #D4C5F9 (--accent-lavender)
 - **Total Budget**: ~NTD 131,715 per person
 
 ### Design Inspiration
-The entire design is themed around the **Dallas Mavericks** basketball team, incorporating their official colors and basketball-related animations to create a cohesive sports-travel experience.
+
+The design philosophy combines **Japanese traditional colors (日系傳統色)** with **Dallas Mavericks basketball theme**:
+
+1. **Japanese Traditional Aesthetics**:
+   - Uses authentic traditional color names (生成色, 練色, 若草色, 水淺蔥, 灰櫻, 藤鼠, 辛子色, 胡桃色, 素鼠, 鐵御納戶)
+   - Creates warmth and depth through layered backgrounds (ecru, glossy-silk, white)
+   - Natural, muted tones evoke a sense of calm, sophistication, and literary culture (文青感)
+   - Avoids harsh pure whites and blacks in favor of warm neutrals
+
+2. **Basketball Theme Integration**:
+   - **Mavericks blue** reserved exclusively for basketball-related elements:
+     - Header section
+     - Active navigation states
+     - NBA Day 4 special card and badge
+   - Blue acts as strategic "accent points" rather than overwhelming the entire design
+
+3. **Visual Hierarchy**:
+   - Multiple background layers create subtle depth perception
+   - Natural color gradients for hover states guide user interaction
+   - Mustard yellow (辛子色) draws attention to pricing and important information
+   - Different natural colors for different card types maintain visual interest
+
+This approach resolves the "too blue/too heavy" (太藍太沈重) feedback while preserving the basketball identity and adding Japanese aesthetic warmth.
 
 ---
 
-**Last Updated**: 2026-01-02
-**Version**: 1.0
+**Last Updated**: 2026-01-03
+**Version**: 2.0 (Japanese Traditional Color Update)
 **Maintained By**: AI Assistant (Claude)
