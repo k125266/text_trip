@@ -45,12 +45,58 @@
 
         <nav class="tab-nav scroll-reveal">
             <button class="tab-btn active" onclick="showTab('overview')">📊 總覽</button>
+            <button class="tab-btn" onclick="showTab('transportation')">🚗 交通</button>
             <button class="tab-btn" onclick="showTab('days')">📅 行程</button>
             <button class="tab-btn" onclick="showTab('accommodation')">🏨 住宿</button>
             <button class="tab-btn" onclick="showTab('tips')">💡 提醒</button>
         </nav>
 
         <div id="overview" class="tab-content active">
+            <div class="compact-grid">
+                <div class="info-card scroll-reveal scroll-reveal-delay-1">
+                    <div class="card-header">💰 匯率</div>
+                    <div class="card-body">
+                        <div class="big-number">$1 ≈ NTD 32</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="budget-display scroll-reveal">
+                <h2>💵 預算總覽(每人)</h2>
+                <div class="budget-compact">
+                    <div class="budget-row">
+                        <span>機票</span>
+                        <span class="amount">NTD 75,003</span>
+                    </div>
+                    <div class="budget-row">
+                        <span>住宿</span>
+                        <span class="amount">NTD 19,600</span>
+                    </div>
+                    <div class="budget-row">
+                        <span>租車+保險</span>
+                        <span class="amount">NTD 11,832</span>
+                    </div>
+                    <div class="budget-row">
+                        <span>電費</span>
+                        <span class="amount">NTD 1,280</span>
+                    </div>
+                    <div class="budget-row">
+                        <span>餐飲</span>
+                        <span class="amount">NTD 12,000</span>
+                    </div>
+                    <div class="budget-row">
+                        <span>門票活動</span>
+                        <span class="amount">NTD 12,000</span>
+                    </div>
+                    <div class="budget-row total">
+                        <span>總計</span>
+                        <span class="amount">NTD 131,715</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="transportation" class="tab-content">
             <div class="airport-hero scroll-reveal-scale">
                 <img src="https://suffolk.com/wp-content/uploads/2021/12/DFW-terminal-C-thumbnail.jpg" alt="Dallas Fort Worth Airport Terminal C">
                 <div class="airport-overlay">
@@ -130,8 +176,22 @@
                     </div>
                 </div>
 
+                <div class="info-card scroll-reveal scroll-reveal-delay-2">
+                    <div class="card-header"><img src="https://cdn-icons-png.flaticon.com/512/9709/9709678.png" alt="Car" class="basketball-icon"> 租車</div>
+                    <div class="card-body">
+                        <p><strong>Tesla Model 3 2025(需FSD)</strong></p>
+                        <p>Turo(5.0★)DFW機場取還</p>
+                        <p class="highlight">總價:$739.48(含1,050英里)</p>
+                        <p style="font-size: 0.9em; margin-top: 10px;">
+                            <strong>保險:</strong>SLI + LDW<br>
+                            <strong>停車:</strong>ParkMobile App<br>
+                            <strong>提醒:</strong>左駕右行、紅燈可右轉
+                        </p>
+                    </div>
+                </div>
+
                 <!-- 德州行程路線圖 -->
-                <div class="info-card route-map-card scroll-reveal scroll-reveal-delay-2">
+                <div class="info-card route-map-card scroll-reveal scroll-reveal-delay-3">
                     <div class="card-header">🗺️ 德州行程路線</div>
                     <div class="card-body">
                         <div class="map-container">
@@ -175,61 +235,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="info-card scroll-reveal scroll-reveal-delay-3">
-                    <div class="card-header"><img src="https://cdn-icons-png.flaticon.com/512/9709/9709678.png" alt="Car" class="basketball-icon"> 租車</div>
-                    <div class="card-body">
-                        <p><strong>Tesla Model 3 2025(需FSD)</strong></p>
-                        <p>Turo(5.0★)DFW機場取還</p>
-                        <p class="highlight">總價:$739.48(含1,050英里)</p>
-                        <p style="font-size: 0.9em; margin-top: 10px;">
-                            <strong>保險:</strong>SLI + LDW<br>
-                            <strong>停車:</strong>ParkMobile App<br>
-                            <strong>提醒:</strong>左駕右行、紅燈可右轉
-                        </p>
-                    </div>
-                </div>
-
-                <div class="info-card scroll-reveal scroll-reveal-delay-4">
-                    <div class="card-header">💰 匯率</div>
-                    <div class="card-body">
-                        <div class="big-number">$1 ≈ NTD 32</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="budget-display scroll-reveal">
-                <h2>💵 預算總覽(每人)</h2>
-                <div class="budget-compact">
-                    <div class="budget-row">
-                        <span>機票</span>
-                        <span class="amount">NTD 75,003</span>
-                    </div>
-                    <div class="budget-row">
-                        <span>住宿</span>
-                        <span class="amount">NTD 19,600</span>
-                    </div>
-                    <div class="budget-row">
-                        <span>租車+保險</span>
-                        <span class="amount">NTD 11,832</span>
-                    </div>
-                    <div class="budget-row">
-                        <span>電費</span>
-                        <span class="amount">NTD 1,280</span>
-                    </div>
-                    <div class="budget-row">
-                        <span>餐飲</span>
-                        <span class="amount">NTD 12,000</span>
-                    </div>
-                    <div class="budget-row">
-                        <span>門票活動</span>
-                        <span class="amount">NTD 12,000</span>
-                    </div>
-                    <div class="budget-row total">
-                        <span>總計</span>
-                        <span class="amount">NTD 131,715</span>
                     </div>
                 </div>
             </div>
