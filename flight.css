@@ -10,7 +10,7 @@
 .flight-section {
     margin-bottom: 25px;
     padding-bottom: 25px;
-    border-bottom: 2px solid rgba(0, 83, 188, 0.2);
+    border-bottom: 2px solid rgba(58, 91, 117, 0.25);
 }
 
 .flight-section:last-of-type {
@@ -22,7 +22,7 @@
 .flight-label {
     font-size: 1.5em;
     font-weight: bold;
-    color: #FFA500;
+    color: var(--mustard);
     margin-bottom: 15px;
 }
 
@@ -41,17 +41,18 @@
 
 .flight-airline {
     font-size: 1.2em;
-    color: var(--mavs-silver);
+    color: rgba(255, 255, 255, 0.9);
     align-self: center;
 }
 
 .flight-class {
     font-size: 1em;
-    color: #FFA500;
+    color: var(--mustard);
     align-self: center;
-    background: rgba(255, 165, 0, 0.15);
+    background: rgba(216, 202, 134, 0.2);
     padding: 4px 12px;
     border-radius: 8px;
+    border: 1px solid rgba(216, 202, 134, 0.3);
 }
 
 .flight-times {
@@ -72,7 +73,7 @@
 
 .time-label {
     font-size: 0.9em;
-    color: var(--mavs-silver);
+    color: rgba(255, 255, 255, 0.85);
     text-transform: uppercase;
 }
 
@@ -84,21 +85,21 @@
 
 .terminal-info {
     font-size: 0.85em;
-    color: var(--mavs-silver);
-    background: rgba(0, 83, 188, 0.2);
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(58, 91, 117, 0.3);
     padding: 3px 10px;
     border-radius: 6px;
 }
 
 .flight-duration {
     font-size: 1em;
-    color: #FFA500;
+    color: var(--mustard);
     font-weight: bold;
     text-align: center;
     padding: 8px 15px;
-    background: rgba(255, 165, 0, 0.1);
+    background: rgba(216, 202, 134, 0.15);
     border-radius: 10px;
-    border: 1px dashed rgba(255, 165, 0, 0.4);
+    border: 1px dashed rgba(216, 202, 134, 0.5);
 }
 
 .flight-route {
@@ -113,10 +114,10 @@
     font-size: 2.5em;
     font-weight: bold;
     color: #fff;
-    background: rgba(0, 83, 188, 0.4);
+    background: rgba(58, 91, 117, 0.5);
     padding: 15px 25px;
     border-radius: 15px;
-    border: 2px solid rgba(0, 83, 188, 0.6);
+    border: 2px solid rgba(58, 91, 117, 0.7);
     min-width: 120px;
     text-align: center;
 }
@@ -128,9 +129,10 @@
 }
 
 .airport-code.end {
-    background: linear-gradient(135deg, rgba(255, 140, 0, 0.5), rgba(255, 100, 0, 0.3));
-    border-color: rgba(255, 165, 0, 0.8);
-    color: #fff;
+    background: linear-gradient(135deg, rgba(216, 202, 134, 0.5), rgba(181, 172, 114, 0.3));
+    border-color: rgba(216, 202, 134, 0.8);
+    color: var(--charcoal-blue);
+    font-weight: 700;
 }
 
 .flight-path-line {
@@ -163,10 +165,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 43, 92, 0.9);
+    background: rgba(43, 62, 80, 0.9);
     padding: 10px;
     border-radius: 50%;
-    border: 2px solid var(--mavs-royal-blue);
+    border: 2px solid var(--tetsukon);
 }
 
 .flight-plane-icon {
@@ -177,19 +179,19 @@
 
 /* 搭機注意事項 */
 .flight-notes {
-    background: rgba(0, 83, 188, 0.1);
+    background: rgba(58, 91, 117, 0.12);
     border-radius: 15px;
     padding: 20px;
-    border: 2px solid rgba(0, 83, 188, 0.3);
+    border: 2px solid rgba(58, 91, 117, 0.3);
 }
 
 .notes-title {
     font-size: 1.3em;
     font-weight: bold;
-    color: #FFA500;
+    color: var(--mustard);
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 2px solid rgba(0, 83, 188, 0.3);
+    border-bottom: 2px solid rgba(58, 91, 117, 0.3);
 }
 
 .notes-list {
@@ -202,14 +204,14 @@
     padding: 10px 0 10px 30px;
     position: relative;
     font-size: 1.05em;
-    color: var(--mavs-silver);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .notes-list li::before {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #FFA500;
+    color: var(--mustard);
     font-weight: bold;
     font-size: 1.2em;
 }
@@ -226,14 +228,14 @@
     padding: 8px 0 8px 25px;
     position: relative;
     font-size: 0.95em;
-    color: var(--mavs-silver);
+    color: var(--text-secondary);
 }
 
 .boarding-notes-list li::before {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #FFA500;
+    color: var(--mustard);
     font-weight: bold;
     font-size: 1.1em;
 }
