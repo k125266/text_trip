@@ -12,16 +12,22 @@ This is a single-page application for an 8-day, 7-night Texas basketball-themed 
 
 ## 🎨 Design System & Color Scheme
 
-### Japanese Traditional Colors with Basketball Blue Accents
+### Japanese Traditional Colors with Muted Blue Accents
 
-The design uses **Japanese traditional colors (日系傳統色)** for warmth and layered visual depth, while preserving **Dallas Mavericks blue** as basketball-themed accents:
+The design uses **Japanese traditional colors (日系傳統色)** for warmth and layered visual depth, combined with **muted blue tones (柔和藍色調)** for a refined, artsy aesthetic:
 
 ```css
 :root {
-    /* Basketball Theme Colors (Mavericks - used as accents) */
-    --mavs-royal-blue: #0053BC;   /* Primary basketball accent */
-    --mavs-navy-blue: #002B5C;    /* Deep blue for special elements */
-    --mavs-light-blue: #6BA3D8;   /* Soft blue for gradients */
+    /* === Muted Blue System (日系柔和藍色) === */
+
+    /* Primary Brand Blue - Tetsukon (鐵紺 / Iron Blue) */
+    --tetsukon: #3A5B75;          /* Deep desaturated blue-gray, main brand color */
+    --nando: #6C849D;             /* Grayish blue, interactive & secondary elements */
+
+    /* Legacy Aliases (backward compatibility) */
+    --mavs-royal-blue: var(--tetsukon);
+    --mavs-navy-blue: #2B3E50;
+    --mavs-light-blue: var(--nando);
 
     /* === Japanese Traditional Color System === */
 
@@ -39,18 +45,20 @@ The design uses **Japanese traditional colors (日系傳統色)** for warmth and
     /* Earth & Accent Colors */
     --mustard: #D8CA86;           /* 辛子色 - Mustard yellow, accent highlight */
     --walnut: #917B6D;            /* 胡桃色 - Warm walnut brown */
-    --neutral-gray: #727171;      /* 素鼠 - Soft neutral gray */
-    --iron-blue: #2F3A4C;         /* 鐵御納戶 - Intellectual iron blue */
+    --warm-gray: #84898C;         /* Warm gray - secondary text */
+    --charcoal-blue: #2B313B;     /* Charcoal blue - primary text (not pure black) */
 
     /* Semantic Aliases (for convenience) */
     --bg-main: var(--ecru);
     --bg-card: var(--bg-white);
     --bg-secondary: var(--glossy-silk);
-    --text-primary: var(--iron-blue);
-    --text-secondary: var(--neutral-gray);
+    --text-primary: var(--charcoal-blue);
+    --text-secondary: var(--warm-gray);
     --text-tertiary: var(--walnut);
     --accent-primary: var(--mustard);
     --accent-nature: var(--young-grass);
+    --brand-primary: var(--tetsukon);
+    --brand-secondary: var(--nando);
     --border-color: rgba(145, 123, 109, 0.2);
     --shadow-color: rgba(47, 58, 76, 0.08);
 }
@@ -60,27 +68,32 @@ The design uses **Japanese traditional colors (日系傳統色)** for warmth and
 
 1. **Background**: Warm gradient (生成色 `--ecru` to 練色 `--glossy-silk`) - natural cotton/paper warmth
 2. **Cards**: Pure white (`--bg-white`) with walnut-tinted borders and soft neutral shadows
-3. **Text Colors**:
-   - Primary headings: Iron blue (`--iron-blue`) - intellectual depth
-   - Secondary text: Neutral gray (`--neutral-gray`) - soft readability
+3. **Text Colors** (avoiding pure black for reduced eye strain):
+   - Primary headings: Charcoal blue (`--charcoal-blue` #2B313B) - soft, readable depth
+   - Secondary text: Warm gray (`--warm-gray` #84898C) - gentle readability
    - Tertiary elements: Walnut (`--walnut`) - warm accents
-4. **Natural Color Accents**:
+4. **Muted Blue Brand Color** (Tetsukon 鐵紺):
+   - Primary: `--tetsukon` #3A5B75 - deep desaturated blue-gray
+   - Secondary: `--nando` #6C849D - lighter grayish blue for hover states
+   - Philosophy: Low-saturation blues feel premium, calm, and artsy (文青)
+5. **Natural Color Accents**:
    - Hover states: Grayish cherry (`--grayish-cherry`), pale blue-green (`--pale-blue-green`)
    - Day badges: Young grass (`--young-grass`) gradient - spring freshness
    - Timeline elements: Young grass to pale blue-green gradient
    - Price tags: Mustard yellow (`--mustard`) - eye-catching highlights
-5. **Basketball Elements** (Blue gradients reserved for):
-   - Header section (Mavericks light blue to royal blue)
+6. **Basketball Elements** (Muted blue gradients):
+   - Header section (Nando 納戶色 to Tetsukon 鐵紺)
    - Active tab buttons
    - NBA Day 4 card and badge
-6. **Budget Totals**: Wisteria gray to iron blue gradient - elegant and sophisticated
-7. **Hover Effects**:
+   - Flight path lines
+7. **Budget Totals**: Wisteria gray to charcoal blue gradient - elegant and sophisticated
+8. **Hover Effects**:
    - `translateY(-8px)` lift
    - Natural color-tinted shadows (cherry, grass, blue-green)
    - Border color changes to thematic natural colors
    - Subtle gradient backgrounds on hover
-8. **Border Radius**: 15-25px for modern, friendly appearance
-9. **Layered Backgrounds**: Multiple background tones (ecru, glossy-silk, white) create visual depth
+9. **Border Radius**: 15-25px for modern, friendly appearance
+10. **Layered Backgrounds**: Multiple background tones (ecru, glossy-silk, white) create visual depth
 
 ### Typography
 
@@ -447,7 +460,7 @@ function toggleDay(day) {
 ## 🎨 Quick Color Reference
 
 ```css
-/* === Japanese Traditional Color Palette === */
+/* === Japanese Traditional Color Palette with Muted Blue === */
 
 /* Backgrounds (Base Layers) */
 body background: linear-gradient(135deg, #F4F4F0 0%, #EBE6D8 50%, #F4F4F0 100%)
@@ -462,12 +475,18 @@ hover border - cherry: 2px solid #D7C4BB (--grayish-cherry, 灰櫻)
 hover border - grass: 2px solid #B5CAA0 (--young-grass, 若草色)
 hover border - water: 2px solid #AABCBF (--pale-blue-green, 水淺蔥)
 special border: 3px solid #EBE6D8 (--glossy-silk, 練色)
-NBA border: 3px solid #0053BC (--mavs-royal-blue, basketball accent)
+NBA/brand border: 3px solid #3A5B75 (--tetsukon, 鐵紺)
 
-/* Text Colors */
-primary text: #2F3A4C (--iron-blue, 鐵御納戶)
-secondary text: #727171 (--neutral-gray, 素鼠)
+/* Text Colors (not pure black for reduced eye strain) */
+primary text: #2B313B (--charcoal-blue, 炭藍色)
+secondary text: #84898C (--warm-gray, 暖灰色)
 tertiary text: #917B6D (--walnut, 胡桃色)
+white text on blue: rgba(255,255,255,0.85-0.9) /* High contrast for readability */
+
+/* Muted Blue Brand Colors (文青柔和藍) */
+brand primary: #3A5B75 (--tetsukon, 鐵紺 - Iron Blue)
+brand secondary: #6C849D (--nando, 納戶色 - Grayish Blue)
+brand dark: #2B3E50 (--mavs-navy-blue, darker tetsukon variant)
 
 /* Accent Colors */
 price/emphasis: #D8CA86 (--mustard, 辛子色 - mustard yellow)
@@ -479,21 +498,26 @@ hover shadow - cherry: 0 12px 28px rgba(215,196,187,0.35) /* 灰櫻 tint */
 hover shadow - grass: 0 12px 28px rgba(181,202,160,0.3) /* 若草色 tint */
 hover shadow - water: 0 12px 28px rgba(170,188,191,0.3) /* 水淺蔥 tint */
 hover shadow - wisteria: 0 12px 28px rgba(149,163,200,0.4) /* 藤鼠 tint */
-NBA shadow: 0 8px 24px rgba(0,83,188,0.3) /* Basketball blue */
+brand shadow: 0 8px 24px rgba(58,91,117,0.3) /* Muted blue shadow */
 
 /* Gradients - Nature Series */
 day badge (normal): linear-gradient(135deg, #B5CAA0 0%, #AABCBF 100%)
   /* 若草色 → 水淺蔥 */
 timeline elements: linear-gradient(to bottom, #AABCBF, rgba(215,196,187,0.4))
   /* 水淺蔥 → 灰櫻 fade */
-budget total: linear-gradient(135deg, #95A3C8, #2F3A4C)
-  /* 藤鼠 → 鐵御納戶 */
+budget total: linear-gradient(135deg, #95A3C8, #2B313B)
+  /* 藤鼠 → 炭藍色 */
 
-/* Gradients - Basketball Elements (Blue Accents) */
-header background: linear-gradient(135deg, #6BA3D8 0%, #0053BC 100%)
-active tab: linear-gradient(135deg, #6BA3D8 0%, #0053BC 100%)
-NBA badge: linear-gradient(135deg, #0053BC 0%, #002B5C 100%)
-NBA card background: linear-gradient(135deg, rgba(107,163,216,0.15), rgba(0,83,188,0.1))
+/* Gradients - Muted Blue Brand Elements */
+header background: linear-gradient(135deg, #6C849D 0%, #3A5B75 100%)
+  /* 納戶色 → 鐵紺 */
+active tab: linear-gradient(135deg, #6C849D 0%, #3A5B75 100%)
+  /* 納戶色 → 鐵紺 */
+NBA badge: linear-gradient(135deg, #3A5B75 0%, #2B3E50 100%)
+  /* 鐵紺 → darker variant */
+NBA card background: linear-gradient(135deg, rgba(108,132,157,0.15), rgba(58,91,117,0.1))
+  /* Muted blue tint */
+flight elements: rgba(58,91,117,0.3-0.5) /* Terminal info, airport codes */
 
 /* Hover State Backgrounds */
 tab button hover: #D7C4BB (--grayish-cherry, 灰櫻)
@@ -504,15 +528,15 @@ info card hover: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(181,202,16
 
 /* Journey Cards (City Themes) */
 journey days label: #D8CA86 (--mustard, 辛子色)
-journey highlights badge: rgba(181,202,160,0.9) with #2F3A4C text
-  /* 若草色 background, 鐵御納戶 text */
+journey highlights badge: rgba(181,202,160,0.9) with #2B313B text
+  /* 若草色 background, 炭藍色 text */
 journey highlights badge hover: #B5CAA0 (--young-grass, 若草色)
 
 /* Scrollbar */
 scrollbar track: #F4F4F0 (--ecru, 生成色)
-scrollbar thumb: linear-gradient(180deg, #917B6D 0%, #727171 100%)
-  /* 胡桃色 → 素鼠 */
-scrollbar thumb hover: #2F3A4C (--iron-blue, 鐵御納戶)
+scrollbar thumb: linear-gradient(180deg, #917B6D 0%, #84898C 100%)
+  /* 胡桃色 → 暖灰色 */
+scrollbar thumb hover: #2B313B (--charcoal-blue, 炭藍色)
 ```
 
 ---
