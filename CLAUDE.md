@@ -1,5 +1,81 @@
 # CLAUDE.md - Texas Trip Website Documentation
 
+> 德州8天7夜籃球主題自駕遊 · 單頁應用程式 · 日系柔和配色
+
+**Version**: 2.1 | **Last Updated**: 2026-01-04
+
+---
+
+## 📑 Table of Contents
+
+- [Quick Start](#-quick-start)
+- [Git & PR 規範](#-git--pr-規範)
+- [Project Overview](#-project-overview)
+- [Design System & Color Scheme](#-design-system--color-scheme)
+- [File Structure](#-file-structure)
+- [Architecture & Components](#-architecture--components)
+- [Animation Library](#-animation-library)
+- [Responsive Design](#-responsive-design)
+- [JavaScript Functionality](#-javascript-functionality)
+- [Key Conventions for AI Assistants](#-key-conventions-for-ai-assistants)
+- [Development Workflow](#-development-workflow)
+- [Common Pitfalls & Solutions](#-common-pitfalls--solutions)
+- [Content Guidelines](#-content-guidelines)
+- [Quick Color Reference](#-quick-color-reference)
+- [Additional Context](#-additional-context)
+
+---
+
+## ⚡ Quick Start
+
+### 新開發者 5 分鐘上手
+
+1. **打開專案**
+   ```bash
+   # 直接用瀏覽器開啟 index.html（無需 build）
+   open index.html
+   ```
+
+2. **核心檔案**
+   - `index.html` - 網頁結構（單一檔案）
+   - `base.css` - 色彩變數系統（**必讀**）
+   - `script.js` - 互動邏輯（tab 切換、行程展開）
+
+3. **設計原則** ⭐
+   - 使用 **日系傳統色** + **柔和藍**，禁止隨意新增顏色
+   - 價格文字用 **深金色 #8B7500**（淺色背景）
+   - NBA 相關元素保留藍色，其他用自然色系
+
+4. **快速修改樣式**
+   ```css
+   /* 修改價格顏色 → flight.css, itinerary.css */
+   color: #8B7500; /* 深金色，高對比度 */
+
+   /* 修改卡片背景 → tabs.css */
+   background: var(--bg-card); /* 使用變數而非硬編碼 */
+   ```
+
+5. **注意事項**
+   - ❌ 不要直接 commit 到 `main`
+   - ✅ 建立 PR 時自動生成精簡描述（3-5 點）
+   - ✅ 使用 Conventional Commits（`feat:`, `fix:`, `style:`）
+
+---
+
+## 🔧 Git & PR 規範
+
+### Pull Request 規則
+- **標題 (Title)**: 請清楚描述變更內容，格式使用 Conventional Commits (如 `feat: ...`, `fix: ...`)。
+- **內文 (Body)**: **請務必保持精簡 (Keep it concise)**。
+    - 不要寫長篇大論。
+    - 只列出 3-5 個重點項目 (Bullet points) 說明改了什麼即可。
+    - 不需要包含測試計畫或詳細背景，除非我特別要求。
+
+### 指令偏好
+- 建立 PR 時，請自動幫我生成標題與精簡的描述，不需要每次都問我內容。
+
+---
+
 ## 📋 Project Overview
 
 This is a single-page application for an 8-day, 7-night Texas basketball-themed road trip (德州8天7夜籃球主題自駕遊). The website provides a comprehensive travel itinerary from February 26 to March 5, 2026, covering Dallas, Austin, and San Antonio.
