@@ -254,7 +254,7 @@
 .checklist-label {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
+    gap: 15px;
     padding: 20px 15px;
     cursor: pointer;
     position: relative;
@@ -288,13 +288,6 @@
     color: white;
     font-size: 16px;
     font-weight: bold;
-}
-
-/* Icon */
-.checklist-icon {
-    font-size: 1.8em;
-    min-width: 1.2em;
-    text-align: center;
 }
 
 /* 內容區域 */
@@ -391,12 +384,8 @@
     }
 
     .checklist-label {
-        gap: 15px;
+        gap: 12px;
         padding: 18px 10px;
-    }
-
-    .checklist-icon {
-        font-size: 1.5em;
     }
 
     .checklist-title {
@@ -436,10 +425,6 @@
         left: 16px;
         top: 17px;
         font-size: 14px;
-    }
-
-    .checklist-icon {
-        font-size: 1.3em;
     }
 
     .checklist-title {
