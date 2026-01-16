@@ -199,8 +199,8 @@
 }
 
 .budget-row.total {
-    background: linear-gradient(135deg, var(--wisteria-gray) 0%, var(--iron-blue) 100%);
-    border: 2px solid var(--iron-blue);
+    background: linear-gradient(135deg, var(--wisteria-gray) 0%, var(--charcoal-blue) 100%);
+    border: 2px solid var(--tetsukon);
     font-weight: bold;
     font-size: 1.3em;
     margin-top: 15px;
@@ -388,7 +388,7 @@
 .highlight-badge {
     background: rgba(181, 202, 160, 0.9);
     backdrop-filter: blur(10px);
-    color: var(--iron-blue);
+    color: var(--tetsukon);
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 0.9em;
@@ -400,7 +400,7 @@
 .highlight-badge:hover {
     background: var(--young-grass);
     border-color: var(--walnut);
-    color: var(--iron-blue);
+    color: var(--tetsukon);
 }
 
 /* 天氣提醒 - 日系白色卡片 */
