@@ -532,6 +532,16 @@
 }
 
 @media (max-width: 480px) {
+    .book-close {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.8em;
+        z-index: 1001;
+    }
+
     .page-header {
         padding: 20px;
     }

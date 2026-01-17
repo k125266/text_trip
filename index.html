@@ -50,12 +50,14 @@
             <button class="tab-btn" onclick="showTab('days')">📅 行程</button>
             <button class="tab-btn" onclick="showTab('accommodation')"><img src="https://cdn-icons-png.flaticon.com/512/8526/8526337.png" alt="Hotel" class="basketball-icon" style="width: 1.2em; height: 1.2em; vertical-align: middle;"> 住宿</button>
             <button class="tab-btn" onclick="showTab('tips')"><img src="https://cdn-icons-png.flaticon.com/512/6804/6804536.png" alt="Tips" class="basketball-icon" style="width: 1.2em; height: 1.2em; vertical-align: middle;"> 提醒</button>
+            <button class="tab-btn" onclick="showTab('preparation')">📋 行前準備</button>
+            <button class="tab-btn" onclick="showTab('luggage')">🎒 行李</button>
         </nav>
 
         <div id="overview" class="tab-content active">
             <!-- 統計數據英雄區塊 -->
             <div class="stats-hero scroll-reveal-scale">
-                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2070&auto=format&fit=crop" alt="American Airlines Center - Dallas Mavericks" class="stats-bg">
+                <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=2069&auto=format&fit=crop" alt="American Airlines Center Arena" class="stats-bg">
                 <div class="stats-overlay">
                     <div class="stats-grid">
                         <div class="stat-item">
@@ -91,7 +93,7 @@
                 <h2 class="section-title">🗓️ 旅程規劃</h2>
                 <div class="journey-cards">
                     <div class="journey-card dallas-card">
-                        <img src="https://images.unsplash.com/photo-1558931157-114e57a2f886?q=80&w=2070&auto=format&fit=crop" alt="Dallas Skyline" class="journey-bg">
+                        <img src="https://images.unsplash.com/photo-1583163930852-e45a6b4c5c3c?q=80&w=2070&auto=format&fit=crop" alt="Dallas Skyline" class="journey-bg">
                         <div class="journey-overlay">
                             <div class="journey-days">Day 1-4</div>
                             <div class="journey-city">Dallas</div>
@@ -113,7 +115,7 @@
                         </div>
                     </div>
                     <div class="journey-card sanantonio-card">
-                        <img src="https://images.unsplash.com/photo-1583011089003-74a8575ac803?q=80&w=2070&auto=format&fit=crop" alt="San Antonio River Walk" class="journey-bg">
+                        <img src="https://images.unsplash.com/photo-1580837119756-563d608dd119?q=80&w=2070&auto=format&fit=crop" alt="San Antonio River Walk" class="journey-bg">
                         <div class="journey-overlay">
                             <div class="journey-days">Day 6-7</div>
                             <div class="journey-city">San Antonio</div>
@@ -486,7 +488,10 @@
                     </ul>
                 </div>
             </div>
+        </div>
 
+        <!-- 行前準備 Tab -->
+        <div id="preparation" class="tab-content">
             <!-- 行前準備清單 -->
             <div class="checklist-section scroll-reveal">
                 <h2 class="checklist-header">
@@ -649,7 +654,10 @@
                     </div>
                 </div>
             </div>
+        </div>
 
+        <!-- 行李 Tab -->
+        <div id="luggage" class="tab-content">
             <!-- 行李打包清單 -->
             <div class="packing-section scroll-reveal">
                 <h2 class="packing-header">

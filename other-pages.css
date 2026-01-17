@@ -136,6 +136,9 @@
     }
 
     /* 提醒卡片 */
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .tip-card {
         padding: 20px;
     }
@@ -153,7 +156,7 @@
 
 @media (max-width: 600px) {
     .tips-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
