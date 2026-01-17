@@ -752,21 +752,23 @@
 .city-name {
     font-size: 1.3em;
     font-weight: bold;
-    color: #fff;
-    background: rgba(0, 83, 188, 0.3);
+    color: var(--charcoal-blue);
+    background: rgba(108, 132, 157, 0.12);
     padding: 8px 15px;
     border-radius: 12px;
-    border: 2px solid rgba(0, 83, 188, 0.4);
+    border: 2px solid rgba(58, 91, 117, 0.25);
 }
 
 .city-name.start {
-    background: linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.1));
-    border-color: rgba(0, 200, 0, 0.5);
+    background: linear-gradient(135deg, rgba(181, 202, 160, 0.3), rgba(181, 202, 160, 0.15));
+    border-color: var(--young-grass);
+    color: var(--charcoal-blue);
 }
 
 .city-name.end {
-    background: linear-gradient(135deg, rgba(255, 165, 0, 0.2), rgba(255, 165, 0, 0.1));
-    border-color: rgba(255, 165, 0, 0.5);
+    background: linear-gradient(135deg, rgba(216, 202, 134, 0.3), rgba(216, 202, 134, 0.15));
+    border-color: var(--mustard);
+    color: var(--charcoal-blue);
 }
 
 .route-arrow {
@@ -781,20 +783,20 @@
     justify-content: center;
     gap: 12px;
     font-size: 1.1em;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--text-secondary);
 }
 
 .distance {
-    color: var(--mustard);
+    color: #8B7500;
     font-weight: bold;
 }
 
 .duration {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--text-secondary);
 }
 
 .divider {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(145, 123, 109, 0.4);
 }
 
 /* 手機版路線圖 */
