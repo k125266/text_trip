@@ -694,6 +694,116 @@
     }
 }
 
+/* 租車資訊表格 - 文青旅遊書風格 */
+.rental-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.rental-title {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--charcoal-blue);
+    margin-bottom: 8px;
+}
+
+.rental-company {
+    font-size: 1em;
+    color: var(--warm-gray);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.host-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: var(--charcoal-blue);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(255, 165, 0, 0.3);
+}
+
+.rental-meta {
+    font-size: 0.9em;
+    color: var(--walnut);
+    margin-top: 5px;
+}
+
+.rental-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--glossy-silk) 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(145, 123, 109, 0.15);
+}
+
+.rental-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s;
+}
+
+.rental-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.rental-table tbody tr:hover {
+    background: rgba(181, 202, 160, 0.08);
+}
+
+.rental-table tbody tr.price-row {
+    background: linear-gradient(135deg, rgba(216, 202, 134, 0.15), rgba(184, 150, 10, 0.1));
+}
+
+.rental-table tbody tr.price-row:hover {
+    background: linear-gradient(135deg, rgba(216, 202, 134, 0.25), rgba(184, 150, 10, 0.15));
+}
+
+.table-label {
+    width: 30%;
+    padding: 15px 18px;
+    font-weight: 600;
+    color: var(--walnut);
+    background: rgba(235, 230, 216, 0.3);
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+.table-value {
+    padding: 15px 18px;
+    color: var(--charcoal-blue);
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.table-sub {
+    font-size: 0.85em;
+    color: var(--warm-gray);
+    display: block;
+    margin-top: 3px;
+}
+
+.price-row .table-label {
+    background: rgba(216, 202, 134, 0.25);
+    color: var(--charcoal-blue);
+    font-weight: 700;
+}
+
+.price-row .table-value {
+    font-weight: 700;
+    color: #8B7500;
+    font-size: 1.1em;
+}
+
 /* 德州行程路線圖卡片 - 跨整行與航班資訊一致 */
 .route-map-card {
     grid-column: 1 / -1;
@@ -855,5 +965,27 @@
     .segment-details {
         font-size: 0.9em;
         gap: 8px;
+    }
+
+    .rental-table {
+        font-size: 0.9em;
+    }
+
+    .table-label,
+    .table-value {
+        padding: 10px 12px;
+    }
+
+    .rental-title {
+        font-size: 1.2em;
+    }
+
+    .rental-company {
+        font-size: 0.95em;
+    }
+
+    .host-badge {
+        font-size: 0.85em;
+        padding: 3px 8px;
     }
 }
