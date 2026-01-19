@@ -1,8 +1,8 @@
 /* 住宿頁面 - 日系溫暖卡片 */
 .accommodation-compact {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     margin-bottom: 25px;
 }
 
@@ -20,6 +20,78 @@
     box-shadow: 0 12px 28px rgba(215, 196, 187, 0.35);
     border-color: var(--grayish-cherry);
     background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(215,196,187,0.1) 100%);
+}
+
+/* 可折疊住宿卡片 */
+.acc-card-collapsible {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.acc-card-collapsible:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(215, 196, 187, 0.3);
+    border-color: var(--grayish-cherry);
+}
+
+.acc-card-collapsible.expanded {
+    border-color: var(--young-grass);
+    box-shadow: 0 8px 24px rgba(181, 202, 160, 0.3);
+}
+
+.acc-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--glossy-silk) 100%);
+}
+
+.acc-header-left {
+    flex: 1;
+}
+
+.acc-card-header .acc-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--charcoal-blue);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.acc-meta {
+    font-size: 0.9em;
+    color: var(--warm-gray);
+    margin: 0;
+}
+
+.acc-expand-icon {
+    font-size: 1.2em;
+    color: var(--walnut);
+    transition: transform 0.3s, color 0.3s;
+    margin-left: 15px;
+}
+
+.acc-card-collapsible.expanded .acc-expand-icon {
+    color: var(--young-grass);
+}
+
+.acc-card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    padding: 0 25px;
+}
+
+.acc-card-collapsible.expanded .acc-card-content {
+    padding: 20px 25px 25px 25px;
 }
 
 .acc-header {
@@ -289,6 +361,32 @@
         font-size: 0.85em;
         margin-bottom: 8px;
         line-height: 1.6;
+    }
+
+    /* 可折疊住宿卡片手機版 */
+    .acc-card-header {
+        padding: 15px 18px;
+    }
+
+    .acc-card-header .acc-title {
+        font-size: 1.1em;
+    }
+
+    .acc-meta {
+        font-size: 0.85em;
+    }
+
+    .acc-expand-icon {
+        font-size: 1em;
+        margin-left: 10px;
+    }
+
+    .acc-card-content {
+        padding: 0 18px;
+    }
+
+    .acc-card-collapsible.expanded .acc-card-content {
+        padding: 15px 18px 18px 18px;
     }
     .price-tag {
         font-size: 1em;

@@ -220,6 +220,35 @@ const dayData = {
 
 let currentDay = 1;
 
+// 住宿卡片展開/收起功能
+function toggleAccommodation(city) {
+    const content = document.getElementById(`acc-${city}`);
+    const card = content.closest('.acc-card-collapsible');
+    const icon = card.querySelector('.acc-expand-icon');
+
+    // 如果當前卡片已展開，則收起
+    if (card.classList.contains('expanded')) {
+        card.classList.remove('expanded');
+        icon.textContent = '▼';
+        content.style.maxHeight = '0';
+    } else {
+        // 收起所有其他卡片
+        document.querySelectorAll('.acc-card-collapsible').forEach(c => {
+            c.classList.remove('expanded');
+            c.querySelector('.acc-expand-icon').textContent = '▼';
+            const otherContent = c.querySelector('.acc-card-content');
+            if (otherContent) {
+                otherContent.style.maxHeight = '0';
+            }
+        });
+
+        // 展開當前卡片
+        card.classList.add('expanded');
+        icon.textContent = '▲';
+        content.style.maxHeight = content.scrollHeight + 'px';
+    }
+}
+
 // 開啟翻書模式
 function toggleDay(day) {
     currentDay = day;
