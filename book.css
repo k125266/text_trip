@@ -16,6 +16,9 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease;
+    overflow: hidden;
+    touch-action: pan-y;
+    overscroll-behavior: contain;
 }
 
 .book-viewer.active {
@@ -34,6 +37,7 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
+    touch-action: pan-y;
 }
 
 /* 書頁 - 雜誌風格 */
@@ -54,6 +58,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    touch-action: pan-y;
+    overscroll-behavior-x: none;
 }
 
 /* 翻頁動畫 */
@@ -108,8 +114,11 @@
 .page-content {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 40px 50px 30px;
     background: linear-gradient(to bottom, transparent 0%, rgba(235, 230, 216, 0.2) 100%);
+    touch-action: pan-y;
+    overscroll-behavior-x: none;
 }
 
 /* 時間軸容器 - 改為表格式佈局 */
